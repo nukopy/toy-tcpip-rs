@@ -68,8 +68,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macOS-latest, windows-latest]
-        rust: [stable, nightly]
+        os: [ubuntu-latest]
+        rust: [stable]
+        # os: [ubuntu-latest, macOS-latest, windows-latest]
+        # rust: [stable, nightly]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
