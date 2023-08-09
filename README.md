@@ -4,6 +4,12 @@ Toy TCP/IP protocol stack implementation written in Rust
 
 This project is a Rust implementation of a TCP/IP protocol stack written in C, [microps](https://github.com/pandax381/microps).
 
+## Features
+
+TODO
+
+ref: https://github.com/pandax381/microps#features
+
 ## References
 
 - [github.com/pandax381/microps](https://github.com/pandax381/microps)
