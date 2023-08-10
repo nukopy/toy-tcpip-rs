@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    cap_add:
+      - NET_ADMIN
+    tty: true # NEEDED for keeping container running
