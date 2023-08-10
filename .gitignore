@@ -1,8 +1,12 @@
 ## Local
+# general
 .envrc
 .vscode
 *.code-workspace
 .DS_Store
+
+# local
+ref/**
 
 ## Rust
 /target
