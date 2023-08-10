@@ -1,6 +1,12 @@
 # [WIP] toy-tcpip
 
-[![CI](https://github.com/nukopy/toy-tcpip/actions/workflows/ci.yml/badge.svg)](https://github.com/nukopy/toy-tcpip/actions/workflows/ci.yml)
+[![MIT license badge][mit-badge]][mit-url]
+[![GitHub Actions workflow badge][github-actions-badge]][github-actions-url]
+
+[mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
+[mit-url]: https://github.com/nukopy/toy-tcpip/blob/main/LICENSE
+[github-actions-badge]: https://github.com/nukopy/toy-tcpip/actions/workflows/ci.yml/badge.svg?branch=main
+[github-actions-url]: https://github.com/nukopy/toy-tcpip/actions/workflows/ci.yml?query=branch:main
 
 Toy TCP/IP protocol stack written in Rust
 
