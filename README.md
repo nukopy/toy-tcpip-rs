@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/nukopy/toy-tcpip/actions/workflows/ci.yml/badge.svg)](https://github.com/nukopy/toy-tcpip/actions/workflows/ci.yml)
 
-Toy TCP/IP protocol stack implementation written in Rust
+Toy TCP/IP protocol stack written in Rust
 
 This project is a Rust implementation of a TCP/IP protocol stack written in C, [microps](https://github.com/pandax381/microps).
 
