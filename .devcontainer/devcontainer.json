@@ -9,6 +9,7 @@
         "lfs.vscode-emacs-friendly",
         "tamasfe.even-better-toml",
         "rust-lang.rust-analyzer",
+        "cordx56.rustowl-vscode",
         "yzhang.markdown-all-in-one",
         // GitHub Copilot
         "github.copilot",
