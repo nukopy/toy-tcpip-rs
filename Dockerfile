@@ -18,5 +18,12 @@ RUN apt-get update && apt-get install -y \
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
 
-# コンテナのデフォルトコマンドを bash に設定
-CMD ["bash"]
+# ソースコードのコピー
+COPY . /workspace
+
+# toolchain のインストール　with rust-toolchain.toml
+RUN rustup toolchain install --profile default
+
+# ツールのインストール
+RUN cargo install cargo-binstall
+RUN cargo binstall rustowl
