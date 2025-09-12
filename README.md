@@ -20,40 +20,68 @@ ref: https://github.com/pandax381/microps#features
 
 ## Environment
 
-Developlment environment is based on Docker Compose.
+Host
 
-Container environment is as follows:
+- OS: macOS 14.7
+- UTM 4.6.5
+- Ruby 3.3.0
+- Vagrant 2.4.9
+- vagrant_utm 0.1.3 (Version Constraint: > 0)
+- [vagrant-bindfs](https://github.com/gael-ian/vagrant-bindfs) 1.3.1
 
-- OS: Ubuntu 20.04
-- Rust 1.71.1 stable (at 2023/08/11)
+VM for development
 
-For more details, check out the [Dockerfile](./Dockerfile) and [docker-compose.yml](./docker-compose.yml).
+- OS: Ubuntu 22.04
+- Rust 1.89.0stable (at 2025/06/23)
 
-## Environment Setup
+## Setup
 
-### Requirements
+### Install UTM
 
-- Docker Compose (latest)
+See [UTM homepage](https://mac.getutm.app/).
 
-### Develop in Container
+For macOS users, this article is helpful (only in Japanese): [【macOS】UTM で Ubuntu Desktop 24.04 LTS の仮想マシン環境を構築する](https://zenn.dev/pyteyon/scraps/0c8cec3c56812b)
 
-#### (Recommended) on Visual Studio Code with "Dev Containers"
-
-1. Open this project on Visual Studio Code (VS Code)
-2. Create workspace file like `toy-tcpip.code-workspace`
-3. Run VSCode command (`cmd + shift + P` keybind on macOS): `Dev Containers: Rebuild Container Without Cache`
-4. Start developing!
-
-#### on Terminal
+### Install Vagrant
 
 ```sh
-# in host
-docker compose up -d
-docker compose exec dev bash # "dev" is service name in docker-compose.yml
+brew install vagrant
 
-# in container
-# start developing!
+# install vagrant plugin for UTM
+vagrant plugin install vagrant_utm
 ```
+
+### Setup VM
+
+```sh
+cd toy-tcpip-rs
+
+# start VM
+vagrant up
+
+# start VM with provision
+vagrant up --provision
+
+# reload VM
+vagrant reload
+
+# realod VM with provision
+vagrant reload --provision
+
+# status VM
+vagrant status
+
+# ssh to VM
+vagrant ssh
+
+# get SSH config (e.g. for VSCode Remote-SSH)
+vagrant ssh-config
+
+# stop VM
+vagrant halt
+```
+
+Now, you can start
 
 ## References
 
@@ -61,6 +89,8 @@ docker compose exec dev bash # "dev" is service name in docker-compose.yml
   - Implementation of TCP/IP protocol stack in C. This is a reference implementation of this project.
 - [KLab Expert Camp 5](https://drive.google.com/drive/folders/1k2vymbC3vUk5CTJbay4LLEdZ9HemIpZe)
   - A series of lectures on TCP/IP protocol stack, [microps](https://github.com/pandax381/microps). This project is based on the contents of this lecture.
+- [Available Vagrant boxes for UTM](https://portal.cloud.hashicorp.com/vagrant/discover?query=utm)
+  - Vagrant plugin for UTM.
 
 ## License
 
