@@ -2,11 +2,19 @@ name: CI
 
 on:
   push:
-    paths-ignore:
-      - "**.md"
+    branches:
+      - main
+    paths:
+      - "**"
+      - "!README.md"
+      - "!.gitignore"
   pull_request:
-    paths-ignore:
-      - "**.md"
+    branches:
+      - main
+    paths:
+      - "**"
+      - "!README.md"
+      - "!.gitignore"
 
 env:
   CARGO_INCREMENTAL: 0
