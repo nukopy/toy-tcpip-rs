@@ -2,11 +2,12 @@
 
 set -exuo pipefail
 
-DEBIAN_FRONTEND=noninteractive
+export DEBIAN_FRONTEND=noninteractive
 
 # install packages
 apt-get update -y
-apt-get install -y curl
+# apt-get install -y build-essential
+# apt-get install -y curl
 
 # install rust non interactive
 # ref: https://github.com/rust-lang-deprecated/rustup.sh/issues/83
