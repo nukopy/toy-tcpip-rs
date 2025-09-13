@@ -16,9 +16,5 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 # set cargo path
 source $HOME/.cargo/env
 
-# add to bashrc
+# add to bashrc to add Rust toolchains to PATH
 echo 'source $HOME/.cargo/env' >> $HOME/.bashrc
-
-# install cargo tools
-# cargo install cargo-binstall
-# cargo binstall -y cargo-watch
