@@ -56,5 +56,5 @@ Vagrant.configure("2") do |config|
 
   # Provisioner config, supports all built provisioners
   # ref: https://developer.hashicorp.com/vagrant/docs/provisioning/shell
-  config.vm.provision "shell", path: "scripts/bootstrap.sh"
+  config.vm.provision "shell", privileged: false, path: "scripts/bootstrap.sh"
 end
