@@ -6,6 +6,11 @@ $vm_directory_share_mode = "virtFS"
 $vm_forwarded_port = 80
 $vm_host_port = 8080
 
+# for synced folder
+$base_dir = "/home/vagrant"
+$sync_dir = "#{$base_dir}/_mnt_toy-tcpip-rs"
+$work_dir = "#{$base_dir}/toy-tcpip-rs"
+
 # ref: https://naveenrajm7.github.io/vagrant_utm/configuration.html
 Vagrant.configure("2") do |config|
   # ref: https://portal.cloud.hashicorp.com/vagrant/discover/utm/ubuntu-24.04
@@ -20,31 +25,11 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: $vm_forwarded_port, host: $vm_host_port
 
   # Synced folder
-  # 例: プロジェクトを /home/vagrant/toy-tcpip-rs に共有（typeは書かない＝UTMが9pで付ける）
-  # マウント用のディレクトリ。ホスト ./toy-tcpip-rs が /home/vagrant/toy-tcpip-rs_sync にマウントされる。
-  # このディレクトリは UID / GID が 501:20 のため、VM 上で直接は読み書き実行できない。
-  $sync_dir = "/home/vagrant/_mnt_toy-tcpip-rs"
   config.vm.synced_folder ".", $sync_dir, create: true
 
-  # 501:20 → 1000:1000 に見せ替える “書けるビュー”
-  # 実際のワーキングディレクトリ
-  $work_dir = "/home/vagrant/toy-tcpip-rs"
+  # 501:20 → 1000:1000 に見せる
   config.bindfs.bind_folder $sync_dir, $work_dir,
     map: "501/1000:@20/@1000", perms: "u=rwX:g=rwX:o=rX", create_as_user: true
-
-  # config.vm.synced_folder ".", "/home/vagrant/toy-tcpip-rs",
-  #   # type: "nfs",
-  #   # nfs_udp: false,
-  #   # mount_options: ["rw", "vers=4", "tcp"],
-  #   # map_uid: Process.uid,
-  #   # map_gid: Process.gid,
-  #   # create: true
-  #   # type: "virtiofs",
-  #   # Vagrant UTM プラグインでは default で UTM QEMU VirtFS を同期フォルダの実装として使用している。
-  #   # ref: https://naveenrajm7.github.io/vagrant_utm/features/synced_folders.html
-  #   owner: "vagrant",
-  #   group: "vagrant",
-  #   create: true
 
   # Provider specific configs
   config.vm.provider "utm" do |u|
@@ -70,12 +55,6 @@ Vagrant.configure("2") do |config|
   end
 
   # Provisioner config, supports all built provisioners
-  # shell, ansible
   # ref: https://developer.hashicorp.com/vagrant/docs/provisioning/shell
   config.vm.provision "shell", path: "scripts/bootstrap.sh"
-
-  # config.vm.provision "shell", inline: <<-SHELL
-  # # apt-get update
-  # echo "Hello, World!"
-  # SHELL
 end
