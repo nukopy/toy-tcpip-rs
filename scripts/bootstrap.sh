@@ -21,6 +21,6 @@ echo "cargo version: $(cargo --version)"
 # add to bashrc to add Rust toolchains to PATH
 echo "source $HOME/.cargo/env" >> $HOME/.bashrc
 
-set +exuo pipefail
+set +exu pipefail
 
 echo "Bootstrap script completed successfully!"
