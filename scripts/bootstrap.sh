@@ -8,7 +8,7 @@ echo "Bootstrapping VM for toy-tcpip-rs..."
 echo "Run script as non-root user: whoami=$(whoami)"
 
 # install packages
-sudo apt-get update -y
+sudo apt-get update -y && sudo apt-get install -y gcc
 
 # install rust non interactive
 # ref: https://github.com/rust-lang-deprecated/rustup.sh/issues/83
