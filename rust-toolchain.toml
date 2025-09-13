@@ -1,4 +1,5 @@
 [toolchain]
+# Rust stable version is 1.89.0 at 2025.09.13 (ref: https://releases.rs/)
 channel = "1.89.0"
 components = ["rustfmt", "clippy", "rust-analyzer"]
 targets = ["aarch64-unknown-linux-gnu"]
