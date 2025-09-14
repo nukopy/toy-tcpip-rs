@@ -31,7 +31,7 @@ Host
 
 VM for development
 
-- OS: Ubuntu 22.04
+- OS: Ubuntu 24.04
 - Rust 1.89.0stable (at 2025/06/23)
 
 ## Setup
@@ -80,8 +80,6 @@ vagrant ssh-config
 # stop VM
 vagrant halt
 ```
-
-Now, you can start
 
 ## References
 
