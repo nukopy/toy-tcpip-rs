@@ -16,6 +16,7 @@ echo "Run script as non-root user: whoami=$(whoami)"
 sudo apt-get update -y && sudo apt-get install -y \
   build-essential \
   gdb \
+  clangd \
   git \
   strace \
   tree \
