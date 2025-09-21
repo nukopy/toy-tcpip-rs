@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -exu pipefail
+set -exu -o pipefail
 
 export DEBIAN_FRONTEND=noninteractive
 
@@ -21,6 +21,6 @@ echo "cargo version: $(cargo --version)"
 # add to bashrc to add Rust toolchains to PATH
 echo "source $HOME/.cargo/env" >> $HOME/.bashrc
 
-set +exu pipefail
+set +exu +o pipefail
 
 echo "Bootstrap script completed successfully!"
