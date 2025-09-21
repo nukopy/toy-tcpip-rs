@@ -7,11 +7,29 @@ export DEBIAN_FRONTEND=noninteractive
 echo "Bootstrapping VM for toy-tcpip-rs..."
 echo "Run script as non-root user: whoami=$(whoami)"
 
-# install packages
-sudo apt-get update -y && sudo apt-get install -y git gcc
+# --------------------------------------------------
+# install general packages
+# ref: KLab Expert Camp 6 day 1: https://docs.google.com/presentation/d/1ID6ggxASfc_1bWiJfDy1IFKIwzxvfYy8rUBrWYTRFj8/edit?slide=id.gd328c3072b_0_1025#slide=id.gd328c3072b_0_1025
+# --------------------------------------------------
 
-# install rust non interactive
-# ref: https://github.com/rust-lang-deprecated/rustup.sh/issues/83
+# development tools
+sudo apt-get update -y && sudo apt-get install -y \
+  build-essential \
+  git \
+  strace \
+  tree
+
+# network tools
+# sudo apt-get update -y && sudo apt-get install -y \
+#   iproute2 \
+#   iputils-ping \
+#   netcat-openbsd
+
+# --------------------------------------------------
+# setup Rust
+# --------------------------------------------------
+
+# ref: Install Rust non interactively: https://github.com/rust-lang-deprecated/rustup.sh/issues/83
 curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 # set cargo path
