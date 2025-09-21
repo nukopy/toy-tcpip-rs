@@ -17,7 +17,8 @@ sudo apt-get update -y && sudo apt-get install -y \
   build-essential \
   git \
   strace \
-  tree
+  tree \
+  clang-format
 
 # network tools
 # sudo apt-get update -y && sudo apt-get install -y \
