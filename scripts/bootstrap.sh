@@ -39,6 +39,15 @@ echo "cargo version: $(cargo --version)"
 # add to bashrc to add Rust toolchains to PATH
 echo "source $HOME/.cargo/env" >> $HOME/.bashrc
 
+# --------------------------------------------------
+# setup git
+# --------------------------------------------------
+
+USERNAME="nukopy"
+EMAIL="nukopy@gmail.com"
+git config --global user.name "$USERNAME"
+git config --global user.email "$EMAIL"
+
 set +exu +o pipefail
 
 echo "Bootstrap script completed successfully!"
