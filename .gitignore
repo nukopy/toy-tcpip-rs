@@ -19,3 +19,7 @@ ref/**
 ## C
 *.out
 main
+
+## References
+docs/ref/
+!docs/ref/.gitkeep
