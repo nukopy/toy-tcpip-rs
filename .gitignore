@@ -14,3 +14,12 @@ ref/**
 # Log files (if you are creating logs in debug mode, uncomment this)
 *.log
 !docs/strace/**
+!docs/examples/**
+
+## C
+*.out
+main
+
+## References
+docs/ref/
+!docs/ref/.gitkeep

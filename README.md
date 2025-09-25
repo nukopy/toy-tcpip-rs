@@ -47,8 +47,8 @@ For macOS users, this article is helpful (only in Japanese): [【macOS】UTM で
 ```sh
 brew install vagrant
 
-# install vagrant plugin for UTM
-vagrant plugin install vagrant_utm
+# install vagrant plugins
+vagrant plugin install vagrant_utm vagrant-bindfs
 ```
 
 ### Setup VM
@@ -85,7 +85,7 @@ vagrant halt
 
 - [github.com/pandax381/microps](https://github.com/pandax381/microps)
   - Implementation of TCP/IP protocol stack in C. This is a reference implementation of this project.
-- [KLab Expert Camp 5](https://drive.google.com/drive/folders/1k2vymbC3vUk5CTJbay4LLEdZ9HemIpZe)
+- [KLab Expert Camp 6 - reference materials](https://drive.google.com/drive/folders/1k2vymbC3vUk5CTJbay4LLEdZ9HemIpZe)
   - A series of lectures on TCP/IP protocol stack, [microps](https://github.com/pandax381/microps). This project is based on the contents of this lecture.
 - [Available Vagrant boxes for UTM](https://portal.cloud.hashicorp.com/vagrant/discover?query=utm)
   - Vagrant plugin for UTM.

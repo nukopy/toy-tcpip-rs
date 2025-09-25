@@ -1,0 +1,7 @@
+close(3)                                = 0
+close(3)                                = 0
+socket(AF_INET, SOCK_STREAM, IPPROTO_IP) = 3
+socket(AF_INET, SOCK_STREAM, IPPROTO_IP) = 4
+close(3)                                = 0
+close(4)                                = 0
++++ exited with 0 +++
