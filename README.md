@@ -81,7 +81,7 @@ vagrant ssh-config
 vagrant halt
 ```
 
-Now, you can start
+Now, you can start development!
 
 ## References
 
